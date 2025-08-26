@@ -1,0 +1,19 @@
+{
+  "simple": "value",
+  "nested": {
+    "key": "nested value"
+  },
+  "array": [
+    "item1",
+    "item2",
+    {"arrayObject": "value"}
+  ],
+  "key.with.dots": "dotted key value",
+  "emptyObject": {},
+  "emptyArray": [],
+  "nullValue": null,
+  "booleanTrue": true,
+  "booleanFalse": false,
+  "number": 42,
+  "float": 3.14
+}
