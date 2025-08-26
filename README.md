@@ -24,47 +24,61 @@ JsonMcpTool allows you to interact with JSON translation files through **Claude 
 
 ## Installation & Setup
 
-### 1. Download JsonMcpTool
+### 1. Prerequisites
+
+You need the `uv` command-line tool installed:
+
+```bash
+# Install uv (Python package manager)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+# OR on macOS with Homebrew:
+brew install uv
+# OR with pip:
+pip install uv
+```
+
+### 2. Download JsonMcpTool
 ```bash
 # Clone or download this repository to your preferred location
 git clone <repository-url> /path/to/JsonMcpTool
 # OR download and extract the ZIP file
 ```
 
-### 2. Configure Claude Code
+### 3. Configure Claude Code
 
-Add JsonMcpTool to your Claude Code MCP configuration:
+Add JsonMcpTool to your Claude Code MCP configuration using the recommended command:
 
-**On macOS/Linux:**
+```bash
+claude mcp add jsonmcptool -- uv --directory /PATH/TO/REPO run json_mcp_server.py
+```
+
+**⚠️ Important**: Replace `/PATH/TO/REPO` with the actual absolute path where you saved JsonMcpTool.
+
+**Alternative manual configuration:**
+If you prefer to configure manually, add this to your Claude Code settings:
+
 ```json
 {
   "mcpServers": {
     "jsonmcptool": {
-      "command": "/path/to/JsonMcpTool/json_mcp_server.py"
+      "type": "stdio",
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/PATH/TO/REPO",
+        "run", 
+        "json_mcp_server.py"
+      ]
     }
   }
 }
 ```
 
-**On Windows:**
-```json
-{
-  "mcpServers": {
-    "jsonmcptool": {
-      "command": "python",
-      "args": ["/path/to/JsonMcpTool/json_mcp_server.py"]
-    }
-  }
-}
-```
-
-**⚠️ Important**: Replace `/path/to/JsonMcpTool/` with the actual absolute path where you saved JsonMcpTool.
-
-### 3. Restart Claude Code
+### 4. Restart Claude Code
 
 Restart Claude Code to load the new MCP tool.
 
-### 4. Test It Works
+### 5. Test It Works
 
 Create a simple JSON file and ask Claude:
 ```
