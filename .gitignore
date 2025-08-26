@@ -1,0 +1,67 @@
+# Built binaries
+server
+jsonmcptool
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Original Python implementation (moved to preserve history)
+original/
+
+# Go build artifacts
+*.test
+*.out
+*.prof
+coverage.txt
+coverage.html
+
+# Dependency directories
+vendor/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.vs/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.pid
+*.seed
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Debug and profiling files
+debug
+*.pprof
+*.trace
+
+# Test coverage files
+c.out
+
+# Local configuration
+config.local.json
+settings.local.json
+
+# Backup files
+*.bak
+*.backup
